@@ -1,0 +1,41 @@
+name: OrdosShops
+main: org.landofordos.ordosshops.OrdosShops
+version: 0.6
+depend: [BKCommonLib]
+softdepend: [Lockette]
+commands:
+   ordosshops:
+      description: OrdosShops base command.
+      usage: /ordosshops help
+      permission: ordosshops.*
+      permission-message: You don't have permission to use this.
+permissions:
+    ordosshops.*:
+        description: Gives access to all OrdosShops commands
+        default: op
+        children:  
+            ordosshops.place: true
+            ordosshops.place: true
+            ordosshops.admin.*: true
+    ordosshops.place:
+        description: Allows placement of OrdosShops signs
+        default: true            
+    ordosshops.destroy:
+        description: Allows destruction of OrdosShops signs owned by this player
+        default: true
+    ordosshops.admin.*:
+        description: Gives access to all OrdosShops admin commands
+        default: op
+        children:
+            ordosshops.admin.reloadconfig: true 
+            ordosshops.admin.ingametoggle: true
+            ordosshops.admin.destroy: true
+    ordosshops.admin.reloadconfig:
+        description: Allows access to reloading the plugins configuration file
+        default: op
+    ordosshops.admin.ingametoggle:
+        description: Allows a player to toggle the plugin on and off in-game
+        default: op
+    ordosshops.admin.destroy:
+        description: Allows destruction of OrdosShops signs owned by anyone
+        default: op

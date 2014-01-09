@@ -1,0 +1,10 @@
+pluginvars:
+  firstrun: false
+  verboselogging: false
+  enabled: true
+rarities:
+  ordinary: 0.0
+  uncommon: 0.002
+  rare: 0.0008
+  legendary: 0.00004
+  unique: 0.000002
